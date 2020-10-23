@@ -14,20 +14,15 @@ class counter extends Component {
         return ( 
             <div>
                 <span className={classes}>{this.formatCount()}</span>
-                <button onClick={this.handleIncrement} className="btn btn-secondary btn-sm">Increment</button>
-                <button onClick={this.handleDecrement} className="btn btn-secondary btn-sm">Decrement</button>
+                <button onClick={ () => this.changeCount(1) } className="btn btn-secondary btn-sm">Increment</button>
+                <button onClick={ () => this.changeCount(-1) } className="btn btn-secondary btn-sm">Decrement</button>
                 
             </div>
          );
     }
 
-    handleDecrement = () => {
-        this.setState({  count : this.state.count-- });
-    }
-
-    handleIncrement = () => {
-        this.setState({  count : this.state.count++ });
-    }
+    changeCount = amount => this.setState({  count : this.state.count += amount });
+    
 
 
 
