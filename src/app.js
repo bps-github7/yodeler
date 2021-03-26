@@ -24,26 +24,40 @@ class App extends Component {
 
 
 
-    render() { 
-        const buttonText = this.state.visible ? "hide" : "show";
-        const slider = this.state.visible ? <Fruit_Slider></Fruit_Slider> : null
+    render() {
         return (
-        <div>
-            <Bootstrap_nav/>
-            <main role="main" class="container">
-  
-                <div class="starter-template">
-                    {slider}
-                    <button onClick={() => this.setState({
-                        visible : !this.state.visible
-                    })}>
-                        {buttonText}
-                    </button>
+            <div className="App" >
+                <div className={this.state.visible ? "visible" : "hidden"}>
+                    <Counter/>
                 </div>
-                <Counter/>
-            </main>
-        </div>
-            );
+                <button
+                    onClick={() => {
+                        this.setState({ visible : !this.state.visible });
+                    }}>
+                    Toggle counter
+                </button>
+            </div>
+        )
+        
+        // const buttonText = this.state.visible ? "hide" : "show";
+        // const slider = this.state.visible ? <Fruit_Slider></Fruit_Slider> : null
+        // return (
+        // <div>
+        //     <Bootstrap_nav/>
+        //     <main role="main" class="container">
+  
+        //         <div class="starter-template">
+        //             {slider}
+        //             <button onClick={() => this.setState({
+        //                 visible : !this.state.visible
+        //             })}>
+        //                 {buttonText}
+        //             </button>
+        //         </div>
+        //         <Counter/>
+        //     </main>
+        // </div>
+            // );
     }
 }
  

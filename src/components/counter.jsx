@@ -23,6 +23,13 @@ class counter extends Component {
 
     changeCount = amount => this.setState({  count : this.state.count += amount });
     
+    componentWillUnmount() {
+        console.log("unmounting...");
+    }
+
+    componentDidMount() {
+        console.log("mounting...");
+    }
 
 
 
