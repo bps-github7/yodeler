@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 class counter extends Component {
     state = { 
-        count : 1
+        count : 0
      }
 
     constructor() {
