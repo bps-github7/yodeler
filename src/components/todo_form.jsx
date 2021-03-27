@@ -16,6 +16,7 @@ export default class TodoForm extends Component {
                 "Make the garlicly smell go away",
                 "Take out the agressive groundhog colony",
                 "Research rice snacks",
+                "EAT THE RICH!!! RAR",
                 "Fight for your right to partaaaay"
             ],
             placeholder_index : 0
