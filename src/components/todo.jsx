@@ -1,14 +1,18 @@
 import React, { Component } from 'react';
 export default props => (
-    <div
-        style={{textDecoration : props.todo.complete ? 'line-through' : ""}}
-        onClick={props.toggleComplete}>
-    <input
-        checked={props.complete}
-        // onChecked={props.toggleComplete}
-        type="checkbox"/>
-    {props.todo.text}
+    
+    
+    
+    <div style={{display : "flex", justifyContent : "center"}}>
+        <div
+            style={{textDecoration : props.todo.complete ? 'line-through' : ""}}
+            onClick={props.toggleComplete}>
+        {props.todo.text}
+        </div>
+        <button onClick={props.deleteTodo}>x</button>
     </div>
+    
+    
 )
 
     
