@@ -20,7 +20,7 @@ const Frog = props => (
 class App extends Component {
 
     state = {
-        visible : true
+        visible : true,
     }
 
 
@@ -38,7 +38,7 @@ class App extends Component {
                     Toggle counter
                 </button>
                 <Fruit_Slider/>
-                <Form/>
+                <Form inputLabels={["title", "description", "rememeberMe", "properTitle"]}/>
             </div>
         )
         
