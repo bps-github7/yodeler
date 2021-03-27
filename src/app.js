@@ -4,6 +4,7 @@ import './app.css';
 import Bootstrap_nav from './components/bootstrap_nav';
 import Counter from './components/counter'
 import Fruit_Slider from './components/fruit_slider';
+import Form from './components/form';
 
 const Frog = props => (
     <p className="App-frog">
@@ -36,6 +37,8 @@ class App extends Component {
                     }}>
                     Toggle counter
                 </button>
+                <Fruit_Slider/>
+                <Form/>
             </div>
         )
         
