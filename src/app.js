@@ -1,11 +1,22 @@
 import React, { Component } from 'react';
-// import logo from 'logo.svg';
 import './app.css';
 import Bootstrap_nav from './components/bootstrap_nav';
 import Counter from './components/counter'
 import Fruit_Slider from './components/fruit_slider';
 import Form from './components/form';
+import Sign_In_Form from './components/sign_in_form';
+import Fetch_Random_Users from './components/fetch_random_users';
+import Fetch_Random_User from './components/fetch_random_user';
+import Todo_List from './components/todo_list';
 
+/* 
+Note there are two ways of making a component
+1. extend React.Component with a class
+2. write a function that returns JSX
+
+the function option has many drawbacks- no state, props is positional args.
+Component can do these and more, but function might be convenient in a squeeze.
+ */
 const Frog = props => (
     <p className="App-frog">
         function component: no this- instead just call 'props'. <br/>
@@ -16,51 +27,35 @@ const Frog = props => (
     </p>
 );
 
-//write a component with a class that extends Component class
 class App extends Component {
+    // state = { }
+    state = { 
+        count : 0
+     }
 
-    state = {
-        visible : true,
+    increment = () => {
+        this.setState({
+            count : this.state.count + 1
+        })
     }
+
+    decrement = () => {
+        this.setState({
+            count : this.state.count - 1
+        })
+    }
+
 
 
 
     render() {
         return (
             <div className="App" >
-                <div className={this.state.visible ? "visible" : "hidden"}>
-                    <Counter/>
-                </div>
-                <button
-                    onClick={() => {
-                        this.setState({ visible : !this.state.visible });
-                    }}>
-                    Toggle counter
-                </button>
-                <Fruit_Slider/>
-                <Form inputLabels={["title", "description", "rememeberMe", "properTitle"]}/>
+                <Todo_List/>
             </div>
         )
         
-        // const buttonText = this.state.visible ? "hide" : "show";
-        // const slider = this.state.visible ? <Fruit_Slider></Fruit_Slider> : null
-        // return (
-        // <div>
-        //     <Bootstrap_nav/>
-        //     <main role="main" class="container">
-  
-        //         <div class="starter-template">
-        //             {slider}
-        //             <button onClick={() => this.setState({
-        //                 visible : !this.state.visible
-        //             })}>
-        //                 {buttonText}
-        //             </button>
-        //         </div>
-        //         <Counter/>
-        //     </main>
-        // </div>
-            // );
+            
     }
 }
  
